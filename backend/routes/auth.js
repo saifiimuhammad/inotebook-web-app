@@ -94,7 +94,7 @@ router.post('/login', [
     }
 })
 
-// Router: 03: Get logged in user details using POST: "/api/auth/getuser". Login required.
+// Router: 03: Get loggedin user details using POST: "/api/auth/getuser". Login required.
 router.post("/getuser", fetchuser, async (req, res) => {
     try {
         let userId = req.user.id;
