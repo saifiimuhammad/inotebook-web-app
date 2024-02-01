@@ -6,10 +6,10 @@ const Home = () => {
     <div className='container my-3'>
       <h1 className='text-center'>Your notebook on the cloud.</h1>
 
-      <container className="my-3">
+      <div className="my-3">
         <h2>Add note</h2>
-        <Form/>
-      </container>
+        <Form />
+      </div>
     </div>
   )
 }
