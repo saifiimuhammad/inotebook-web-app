@@ -31,7 +31,7 @@ const Form = () => {
                 <label htmlFor="noteDescription" className="form-label">Description</label>
                 <textarea className="form-control" id="noteDescription" name='description' rows="5" onChange={handleOnChange}></textarea>
             </div>
-            <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
+            <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Add Note</button>
         </form>
     )
 }

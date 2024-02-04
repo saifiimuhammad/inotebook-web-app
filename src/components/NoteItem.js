@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './style.css';
+import noteContext from '../context/notes/noteContext';
+
 
 const NoteItem = (props) => {
+    const context = useContext(noteContext);
+    const { deleteNote } = context;
     const { note } = props;
 
     return (
@@ -17,7 +21,7 @@ const NoteItem = (props) => {
                     <button type="button" className="btn btn-outline-success me-2">
                         <i className="ri-edit-box-line"></i>
                     </button>
-                    <button type="button" className="btn btn-outline-danger">
+                    <button type="button" className="btn btn-outline-danger" onClick={()=>{deleteNote(note._id)}}>
                         <i className="ri-delete-bin-line"></i>
                     </button>
                 </div>
