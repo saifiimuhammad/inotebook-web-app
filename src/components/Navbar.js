@@ -9,6 +9,7 @@ const Navbar = () => {
     //     console.log(location.pathname);
     //     // eslint-disable-next-line
     //   }, [location]);
+    // hello
 
     return (
         <div>
