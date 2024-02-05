@@ -21,7 +21,7 @@ const Form = () => {
         <form className='my-3'>
             <div className="mb-3">
                 <label htmlFor="noteTitle" className="form-label">Title</label>
-                <input type="text" className="form-control" id="noteTitle" name='title' aria-describedby="noteTitle" onChange={handleOnChange} />
+                <input type="text" className="form-control" id="noteTitle" name='title' aria-describedby="noteTitle" onChange={handleOnChange} minLength={3} required />
             </div>
             <div className="mb-3">
                 <label htmlFor="noteTag" className="form-label">Category</label>
@@ -29,7 +29,7 @@ const Form = () => {
             </div>
             <div className="mb-3">
                 <label htmlFor="noteDescription" className="form-label">Description</label>
-                <textarea className="form-control" id="noteDescription" name='description' rows="5" onChange={handleOnChange}></textarea>
+                <textarea className="form-control" id="noteDescription" name='description' rows="5" onChange={handleOnChange} minLength={5} required ></textarea>
             </div>
             <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Add Note</button>
         </form>

@@ -1,10 +1,12 @@
 const connectToDatabase = require('./db.js');
 const express = require('express');
+const cors = require('cors');
 
 connectToDatabase();    // Function for the connection to the database
 const app = express();
 const port = 5000;
 
+app.use(cors());
 app.use(express.json());
 
 // Available Routes

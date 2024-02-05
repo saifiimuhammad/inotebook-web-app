@@ -6,7 +6,7 @@ import noteContext from '../context/notes/noteContext';
 const NoteItem = (props) => {
     const context = useContext(noteContext);
     const { deleteNote } = context;
-    const { note } = props;
+    const { note, updateNote } = props;
 
     return (
         <div className="col-md-3">
@@ -18,7 +18,7 @@ const NoteItem = (props) => {
                 </div>
                 <span className='text-primary my-3 container'>{new Date(note.date).toGMTString()}</span>
                 <div className="container my-3">
-                    <button type="button" className="btn btn-outline-success me-2">
+                    <button type="button" className="btn btn-outline-success me-2" onClick={()=>{updateNote(note)}}>
                         <i className="ri-edit-box-line"></i>
                     </button>
                     <button type="button" className="btn btn-outline-danger" onClick={()=>{deleteNote(note._id)}}>
