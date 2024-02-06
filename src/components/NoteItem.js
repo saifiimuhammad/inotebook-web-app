@@ -6,7 +6,12 @@ import noteContext from '../context/notes/noteContext';
 const NoteItem = (props) => {
     const context = useContext(noteContext);
     const { deleteNote } = context;
-    const { note, updateNote } = props;
+    const { note, updateNote, showAlert } = props;
+
+    const handleDeleteButton = () => {
+        deleteNote(note._id);
+        showAlert("Success", "Note Deleted successfully!");
+    }
 
     return (
         <div className="col-md-3">
@@ -21,7 +26,7 @@ const NoteItem = (props) => {
                     <button type="button" className="btn btn-outline-success me-2" onClick={()=>{updateNote(note)}}>
                         <i className="ri-edit-box-line"></i>
                     </button>
-                    <button type="button" className="btn btn-outline-danger" onClick={()=>{deleteNote(note._id)}}>
+                    <button type="button" className="btn btn-outline-danger" onClick={handleDeleteButton}>
                         <i className="ri-delete-bin-line"></i>
                     </button>
                 </div>

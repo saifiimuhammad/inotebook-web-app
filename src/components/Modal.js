@@ -2,7 +2,7 @@ import React, { useRef, useContext } from 'react';
 import noteContext from '../context/notes/noteContext';
 
 const Modal = (props) => {
-    const { note, setNote } = props;
+    const { note, setNote, showAlert } = props;
     const context = useContext(noteContext);
     const { updateNote } = context;
     const { id, etitle, edescription, etag } = note;
@@ -11,6 +11,7 @@ const Modal = (props) => {
     const handleSubmit = (e) => {
         refClose.current.click();
         updateNote(id, etitle, edescription, etag);
+        showAlert("Success", "Note updated successfully");
     }
 
     

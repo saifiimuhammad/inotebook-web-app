@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import noteContext from '../context/notes/noteContext';
 
-const Form = () => {
+const Form = (props) => {
     const context = useContext(noteContext);
     const { addNote } = context;
 
@@ -10,6 +10,7 @@ const Form = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         addNote(note.title, note.description, note.tag);
+        props.showAlert("Success", "See your added note in My Notes");
     }
 
     const handleOnChange = (e) => {
@@ -18,7 +19,7 @@ const Form = () => {
 
 
     return (
-        <form className='my-3'>
+        <form className='my-3' onSubmit={handleSubmit}>
             <div className="mb-3">
                 <label htmlFor="noteTitle" className="form-label">Title</label>
                 <input type="text" className="form-control" id="noteTitle" name='title' aria-describedby="noteTitle" onChange={handleOnChange} minLength={3} required />
@@ -31,7 +32,7 @@ const Form = () => {
                 <label htmlFor="noteDescription" className="form-label">Description</label>
                 <textarea className="form-control" id="noteDescription" name='description' rows="5" onChange={handleOnChange} minLength={5} required ></textarea>
             </div>
-            <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Add Note</button>
+            <button type="submit" className="btn btn-primary">Add Note</button>
         </form>
     )
 }
