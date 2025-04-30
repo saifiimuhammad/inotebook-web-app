@@ -1,7 +1,10 @@
 # iNotebook
 **Your notebook on the cloud**
 
-Video Link: https://github.com/saifiimuhammad/inotebook-web-app/assets/99310347/e1655122-a545-40a0-888c-5567126afac1
+## Demo Video 
+https://github.com/user-attachments/assets/3f72fa32-70dc-43ba-ad84-a751b093c96a
+
+
 
 This project, named iNotebook, is a web application developed using the MERN stack along with Bootstrap for styling and Remix icon for icons. It allows users to sign up, log in, and log out. Users can create, edit, or delete notes, which are stored in the database.
 
